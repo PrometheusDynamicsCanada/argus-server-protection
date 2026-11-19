@@ -1,0 +1,22 @@
+{
+  "schema_version": "2026-11-19-v4-redacted",
+  "experiment": "Step 1C - Unattended Cold-Reboot Recovery & External Management Access",
+  "verified_at_utc": "2026-11-07T21:32:47.223509+00:00",
+  "redaction_note": "Host, gateway IP, interface MAC, OS/SSH version banners, UID, PIDs, and kernel-object dumps are withheld.",
+  "boot_transition_verified": true,
+  "boot_session_before": "boot_session_pre_01",
+  "boot_session_after": "boot_session_post_02",
+  "external_tcp_reachability": {
+    "connected": true,
+    "valid_ssh_handshake": true,
+    "latency_ms": 310.78
+  },
+  "external_authenticated_management_check": {
+    "is_non_loopback_external_path": true,
+    "authenticated": true,
+    "latency_ms": 2032.51,
+    "passed": true
+  },
+  "expected_network_and_service_recovery_passed": true,
+  "all_passed": true
+}

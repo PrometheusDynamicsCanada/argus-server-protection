@@ -1,0 +1,333 @@
+{
+  "schema_version": "2026-11-19-v4-redacted",
+  "experiment": "Step 2B - Intervention-Trigger to Connection-Release & Packet-Block Timing (n = 10 Repetitions)",
+  "generated_at_utc": "2026-11-07T21:12:28.523219+00:00",
+  "detection_configuration": "fixed_privately_retained_test_configuration",
+  "checkpoint_note": "Recorded on CLOCK_MONOTONIC across 10 independent repetitions. Internal checkpoints are labeled checkpoint_a and checkpoint_b (mapping retained privately). Repetition 2 had no post-cutoff packet arrival before generator halt and is kept explicitly null.",
+  "summary_statistics": {
+    "onset_to_trigger_ms": {
+      "all_10_values_ms": [
+        92.281,
+        -10.97,
+        33.138,
+        43.839,
+        54.614,
+        33.819,
+        55.321,
+        51.906,
+        52.896,
+        41.375
+      ],
+      "min_ms": -10.97,
+      "median_ms": 47.873,
+      "mean_ms": 44.822,
+      "max_ms": 92.281,
+      "range_ms": "-10.970 - 92.281"
+    },
+    "trigger_to_checkpoint_a_ms": {
+      "all_10_values_ms": [
+        178.87,
+        8.193,
+        155.897,
+        135.914,
+        136.25,
+        193.131,
+        77.161,
+        175.89,
+        113.782,
+        128.083
+      ],
+      "min_ms": 8.193,
+      "median_ms": 136.082,
+      "mean_ms": 130.317,
+      "max_ms": 193.131,
+      "range_ms": "8.193 - 193.131"
+    },
+    "checkpoint_a_to_checkpoint_b_ms": {
+      "all_10_values_ms": [
+        28.786,
+        28.936,
+        27.905,
+        30.809,
+        26.808,
+        63.453,
+        28.01,
+        32.773,
+        27.469,
+        28.007
+      ],
+      "min_ms": 26.808,
+      "median_ms": 28.398,
+      "mean_ms": 32.296,
+      "max_ms": 63.453,
+      "range_ms": "26.808 - 63.453"
+    },
+    "checkpoint_b_to_connection_release_ms": {
+      "all_10_values_ms": [
+        88.446,
+        26.139,
+        37.919,
+        27.814,
+        29.63,
+        56.052,
+        37.256,
+        35.576,
+        33.77,
+        33.81
+      ],
+      "min_ms": 26.139,
+      "median_ms": 34.693,
+      "mean_ms": 40.641,
+      "max_ms": 88.446,
+      "range_ms": "26.139 - 88.446"
+    },
+    "checkpoint_b_to_first_packet_block_ms": {
+      "all_10_values_ms": [
+        109.028,
+        26.139,
+        16.088,
+        11.438,
+        28.421,
+        96.433,
+        56.318,
+        114.138,
+        31.672,
+        28.622
+      ],
+      "min_ms": 11.438,
+      "median_ms": 30.147,
+      "mean_ms": 51.83,
+      "max_ms": 114.138,
+      "range_ms": "11.438 - 114.138"
+    },
+    "trigger_to_checkpoint_b_ms": {
+      "all_10_values_ms": [
+        207.656,
+        37.129,
+        183.802,
+        166.723,
+        163.058,
+        256.584,
+        105.171,
+        208.663,
+        141.251,
+        156.09
+      ],
+      "min_ms": 37.129,
+      "median_ms": 164.891,
+      "mean_ms": 162.613,
+      "max_ms": 256.584,
+      "range_ms": "37.129 - 256.584"
+    },
+    "total_threshold_to_full_enforcement_ms": {
+      "all_10_values_ms": [
+        296.102,
+        63.268,
+        221.721,
+        194.537,
+        192.688,
+        312.636,
+        142.427,
+        244.239,
+        175.021,
+        189.9
+      ],
+      "min_ms": 63.268,
+      "median_ms": 193.613,
+      "mean_ms": 203.254,
+      "max_ms": 312.636,
+      "range_ms": "63.268 - 312.636"
+    },
+    "total_onset_to_full_enforcement_ms": {
+      "all_10_values_ms": [
+        388.383,
+        52.298,
+        254.859,
+        238.377,
+        247.302,
+        346.456,
+        197.748,
+        296.144,
+        227.917,
+        231.275
+      ],
+      "min_ms": 52.298,
+      "median_ms": 242.839,
+      "mean_ms": 248.076,
+      "max_ms": 388.383,
+      "range_ms": "52.298 - 388.383"
+    }
+  },
+  "observations": [
+    {
+      "repetition": 1,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1925.837419,
+        "t1_trigger_observed_s": 1925.9297,
+        "t2_checkpoint_a_s": 1926.10857,
+        "t3_checkpoint_b_s": 1926.137356
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 178.87,
+        "trigger_to_checkpoint_b_ms": 207.656,
+        "trigger_to_connection_release_ms": 296.102,
+        "trigger_to_first_packet_block_ms": 316.684,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 2,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1932.881112,
+        "t1_trigger_observed_s": 1932.870142,
+        "t2_checkpoint_a_s": 1932.878335,
+        "t3_checkpoint_b_s": 1932.907271
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 8.193,
+        "trigger_to_checkpoint_b_ms": 37.129,
+        "trigger_to_connection_release_ms": 63.268,
+        "trigger_to_first_packet_block_ms": null,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": false
+    },
+    {
+      "repetition": 3,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1951.658719,
+        "t1_trigger_observed_s": 1951.691857,
+        "t2_checkpoint_a_s": 1951.847754,
+        "t3_checkpoint_b_s": 1951.875659
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 155.897,
+        "trigger_to_checkpoint_b_ms": 183.802,
+        "trigger_to_connection_release_ms": 221.721,
+        "trigger_to_first_packet_block_ms": 199.89,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 4,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1958.232576,
+        "t1_trigger_observed_s": 1958.276416,
+        "t2_checkpoint_a_s": 1958.41233,
+        "t3_checkpoint_b_s": 1958.443139
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 135.914,
+        "trigger_to_checkpoint_b_ms": 166.723,
+        "trigger_to_connection_release_ms": 194.537,
+        "trigger_to_first_packet_block_ms": 178.161,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 5,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1964.592667,
+        "t1_trigger_observed_s": 1964.647281,
+        "t2_checkpoint_a_s": 1964.783531,
+        "t3_checkpoint_b_s": 1964.810339
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 136.25,
+        "trigger_to_checkpoint_b_ms": 163.058,
+        "trigger_to_connection_release_ms": 192.688,
+        "trigger_to_first_packet_block_ms": 191.479,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 6,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1970.973879,
+        "t1_trigger_observed_s": 1971.007699,
+        "t2_checkpoint_a_s": 1971.20083,
+        "t3_checkpoint_b_s": 1971.264283
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 193.131,
+        "trigger_to_checkpoint_b_ms": 256.584,
+        "trigger_to_connection_release_ms": 312.636,
+        "trigger_to_first_packet_block_ms": 353.017,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 7,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1977.742022,
+        "t1_trigger_observed_s": 1977.797343,
+        "t2_checkpoint_a_s": 1977.874504,
+        "t3_checkpoint_b_s": 1977.902514
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 77.161,
+        "trigger_to_checkpoint_b_ms": 105.171,
+        "trigger_to_connection_release_ms": 142.427,
+        "trigger_to_first_packet_block_ms": 161.489,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 8,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1985.138695,
+        "t1_trigger_observed_s": 1985.1906,
+        "t2_checkpoint_a_s": 1985.36649,
+        "t3_checkpoint_b_s": 1985.399263
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 175.89,
+        "trigger_to_checkpoint_b_ms": 208.663,
+        "trigger_to_connection_release_ms": 244.239,
+        "trigger_to_first_packet_block_ms": 322.801,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 9,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1991.697479,
+        "t1_trigger_observed_s": 1991.750375,
+        "t2_checkpoint_a_s": 1991.864157,
+        "t3_checkpoint_b_s": 1991.891626
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 113.782,
+        "trigger_to_checkpoint_b_ms": 141.251,
+        "trigger_to_connection_release_ms": 175.021,
+        "trigger_to_first_packet_block_ms": 172.923,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    },
+    {
+      "repetition": 10,
+      "monotonic_timestamps_s": {
+        "t0_flood_onset_s": 1998.066696,
+        "t1_trigger_observed_s": 1998.108071,
+        "t2_checkpoint_a_s": 1998.236154,
+        "t3_checkpoint_b_s": 1998.264161
+      },
+      "stage_durations_ms": {
+        "trigger_to_checkpoint_a_ms": 128.083,
+        "trigger_to_checkpoint_b_ms": 156.09,
+        "trigger_to_connection_release_ms": 189.9,
+        "trigger_to_first_packet_block_ms": 184.712,
+        "trigger_to_both_complete_ms": null
+      },
+      "active_packet_blocks_observed": true
+    }
+  ]
+}

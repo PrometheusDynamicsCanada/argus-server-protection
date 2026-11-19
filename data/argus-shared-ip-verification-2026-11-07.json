@@ -1,0 +1,68 @@
+{
+  "schema_version": "2026-11-19-v4-redacted",
+  "experiment": "Step 3 - Shared-IP Traffic Behavior, Trusted-Source Exemptions & Recovery",
+  "generated_at_utc": "2026-11-07T21:31:51.696379+00:00",
+  "detection_configuration": "fixed_privately_retained_test_configuration",
+  "redaction_note": "Internal allowlist paths, configured expiry duration, and kernel map identifiers are withheld.",
+  "all_passed": true,
+  "scenarios": [
+    {
+      "scenario_id": "without_exemption_50conns_office_nat",
+      "trusted_source_exemption_enabled": false,
+      "target_concurrent_connections": 50,
+      "peak_server_sockets_observed": 44,
+      "active_https_requests_sent": 7,
+      "active_https_200": 7,
+      "observed_interventions": 0,
+      "incorrect_interventions_observed": 0,
+      "passed": true
+    },
+    {
+      "scenario_id": "without_exemption_120conns_corporate_nat",
+      "trusted_source_exemption_enabled": false,
+      "target_concurrent_connections": 120,
+      "peak_server_sockets_observed": 117,
+      "active_https_requests_sent": 7,
+      "active_https_200": 7,
+      "observed_interventions": 0,
+      "incorrect_interventions_observed": 0,
+      "passed": true
+    },
+    {
+      "scenario_id": "without_exemption_175conns_heavy_shared_nat",
+      "trusted_source_exemption_enabled": false,
+      "target_concurrent_connections": 175,
+      "peak_server_sockets_observed": 169,
+      "active_https_requests_sent": 8,
+      "active_https_200": 8,
+      "observed_interventions": 0,
+      "incorrect_interventions_observed": 0,
+      "passed": true
+    },
+    {
+      "scenario_id": "with_explicit_exemption_260conns_trusted_proxy",
+      "trusted_source_exemption_enabled": true,
+      "target_concurrent_connections": 260,
+      "peak_server_sockets_observed": 255,
+      "active_https_requests_sent": 9,
+      "active_https_200": 9,
+      "observed_interventions": 0,
+      "incorrect_interventions_observed": 0,
+      "passed": true
+    },
+    {
+      "scenario_id": "without_exemption_intentional_breach_240conns",
+      "trusted_source_exemption_enabled": false,
+      "target_concurrent_connections": null,
+      "peak_server_sockets_observed": null,
+      "active_https_requests_sent": null,
+      "active_https_200": null,
+      "observed_interventions": 0,
+      "incorrect_interventions_observed": 0,
+      "passed": true,
+      "other_visitor_https_responses": "5/5 HTTP 200",
+      "inbound_ssh_ports_22_and_2222_ok": true,
+      "https_auto_recovery_after_socket_close_s": 9.02
+    }
+  ]
+}

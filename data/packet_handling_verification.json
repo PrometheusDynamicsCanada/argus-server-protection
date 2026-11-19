@@ -1,0 +1,113 @@
+{
+  "schema_version": "2026-11-19-v4-redacted",
+  "experiment": "Step 1A - Deterministic Traffic-Handling Verification (13 Cases)",
+  "redaction_note": "Kernel return codes, program IDs, and internal filter predicates are withheld; observable traffic outcomes are preserved.",
+  "inbound_outbound_note": "Inbound management access on tested SSH ports passes during an active block; outbound connections initiated from the host to a blocked peer can remain unavailable during the block.",
+  "all_passed": true,
+  "cases": [
+    {
+      "case_id": "case_01",
+      "scenario": "blocked_peer_https_443_syn",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 3628,
+      "passed": true
+    },
+    {
+      "case_id": "case_02",
+      "scenario": "blocked_peer_spoofed_sport_22_to_443_syn",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 4294,
+      "passed": true
+    },
+    {
+      "case_id": "case_03",
+      "scenario": "blocked_peer_spoofed_sport_22_to_443_ack",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 3079,
+      "passed": true
+    },
+    {
+      "case_id": "case_04",
+      "scenario": "blocked_peer_spoofed_sport_22_to_80_syn",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 2383,
+      "passed": true
+    },
+    {
+      "case_id": "case_05",
+      "scenario": "blocked_peer_spoofed_sport_22_to_8090_ack",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 3001,
+      "passed": true
+    },
+    {
+      "case_id": "case_06",
+      "scenario": "blocked_peer_spoofed_sport_22_to_54321",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 3295,
+      "passed": true
+    },
+    {
+      "case_id": "case_07",
+      "scenario": "traffic_case_07",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 3226,
+      "passed": true
+    },
+    {
+      "case_id": "case_08",
+      "scenario": "traffic_case_08",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 3333,
+      "passed": true
+    },
+    {
+      "case_id": "case_09",
+      "scenario": "traffic_case_09",
+      "expected_behavior": "blocked",
+      "observed_behavior": "blocked",
+      "duration_ns": 3065,
+      "passed": true
+    },
+    {
+      "case_id": "case_10",
+      "scenario": "traffic_case_10",
+      "expected_behavior": "allowed",
+      "observed_behavior": "allowed",
+      "duration_ns": 1554,
+      "passed": true
+    },
+    {
+      "case_id": "case_11",
+      "scenario": "traffic_case_11",
+      "expected_behavior": "allowed",
+      "observed_behavior": "allowed",
+      "duration_ns": 1677,
+      "passed": true
+    },
+    {
+      "case_id": "case_12",
+      "scenario": "traffic_case_12",
+      "expected_behavior": "allowed",
+      "observed_behavior": "allowed",
+      "duration_ns": 2935,
+      "passed": true
+    },
+    {
+      "case_id": "case_13",
+      "scenario": "unblocked_visitor_https_443",
+      "expected_behavior": "allowed",
+      "observed_behavior": "allowed",
+      "duration_ns": 3131,
+      "passed": true
+    }
+  ]
+}

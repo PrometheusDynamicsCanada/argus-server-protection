@@ -1,0 +1,24 @@
+{
+  "schema_version": "2026-11-19-v4-redacted",
+  "release_date": "2026-11-19",
+  "purpose": "Public redacted benchmark archive preserving 100% of external HTTP visitor probe timelines (71 trials), socket counts, SSH checks, monotonic timing distributions, and unsuccessful regimes while withholding internal Argus configuration constants, daemon/path names, kernel object/route tags, and host/gateway/MAC identifiers.",
+  "withheld_categories": [
+    "Configured polling interval, per-source connection limit, and expiry TTL constants",
+    "Internal filesystem paths, systemd service names, and pinned kernel object names",
+    "Kernel packet-filter return codes, route table/protocol tags, and socket-termination CLI commands",
+    "Host gateway IP, network interface MAC address, OS/SSH version banners, UIDs, PIDs, and NGINX worker counter internals"
+  ],
+  "file_sha256": {
+    "argus-pressure-verification-2026-11-07.txt": "3d7d02d7428e6cf639d3ab794138239ac1f08c9a0e65e511b5e09621193899b8",
+    "assets/fig1_argus_instance_comparison.png": "6754684944b5b82cdf31d5f24f8116d0f09d948069519cd92f087069eb3269e4",
+    "data/argus-cross-size-4usd-18usd-48usd-2026-11-07.json": "b36e6d1e75094ee7cf16f10a56cf9a820d69e393f79777d76e37e00f4ec0b2e0",
+    "data/argus-cross-size-4usd-vs-18usd-2026-11-07.json": "c5902a8773b78077909bcd5be9d3db769a1b6874025ad311b722003325a5f10b",
+    "data/argus-detection-timings-2026-11-07.json": "828bd8d8f034e33b513b4c9011ba708edfe47c52835f1d5e0d217a3b68362ac5",
+    "data/argus-pressure-comparison-2026-11-07.json": "807d44c17967ed937ac28b4b5983114e2deb22fdd63a9d60ccf13837f2f3abdc",
+    "data/argus-repeatability-350-800-2026-11-07.json": "c4c7ba562a4dc1a9afc0516c703cc25bd1710d5bb010b16d095ba3ff92cc9b38",
+    "data/argus-shared-ip-verification-2026-11-07.json": "df67d190144a72b73a5e27146304b961a0bef7c4300b98a1611c961d461f86ab",
+    "data/packet_handling_verification.json": "c39a027c331f00ef8f4b25ccf91b055427876977969c204e3c56916e24736402",
+    "data/post_reboot_verification.json": "17b0dd48da2207db295ed6abcc8bad54694d4d9cc9ee77f03a8459369d564685",
+    "data/rollback_verification.json": "1ec471970b05bfe52e801edfd0bd1a6b109ca7ce19fd23952f125c4e5707392e"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "2026-11-19-v4-redacted",
+  "experiment": "Step 1B - Scoped State Rollback & Forced-Termination Recovery",
+  "verified_at_utc": "2026-11-07T20:37:41.794937+00:00",
+  "redaction_note": "Internal route tags, routing table IDs, rule priorities, service names, and filesystem paths are withheld.",
+  "checks": {
+    "argus_owned_network_state_removed": true,
+    "unrelated_routes_preserved": true,
+    "unrelated_policy_rules_preserved": true,
+    "service_recovery_after_forced_termination_passed": true,
+    "automatic_expiry_after_recovery_passed": true
+  },
+  "all_passed": true
+}

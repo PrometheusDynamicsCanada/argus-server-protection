@@ -1,0 +1,39 @@
+ARGUS EXTERNAL CONNECTION-PRESSURE & INTERVENTION VERIFICATION SUMMARY (REDACTED RELEASE v4)
+Original Test Date: 2026-11-07 | Redacted Public Release: 2026-11-19 (v4)
+
+1. DISCLOSURE & REDACTION SCOPE
+Tests used a fixed, privately retained detection configuration on documented Linux/NGINX cloud test hosts behind Cloudflare dynamic pass-through (cf-cache-status: DYNAMIC, SHA-256 verified). Offered loads, achieved socket counts, external visitor probe latencies, management-access checks, monotonic response timings, and unsuccessful regimes are preserved in full. Internal paths, service names, kernel return codes, route tags, polling/cap settings, and host/network identifiers are withheld per REDACTION_MANIFEST.json.
+
+2. THREE-TIER CLOUD VM COMPARISON (3 ROTATED RUNS = 120 VISITOR PROBES AT 350 & 800 CONNECTIONS)
+Monthly dollar figures compare cloud VM infrastructure costs only (excluding Argus licensing or operations):
+- 350 connections + 12 HTTPS workers (120 probes):
+  * $4/mo (1 vCPU, 512 MB) Reference / Tuning-only: 85.0% (102/120) / 77.5% (93/120) within 500 ms
+  * $18/mo (2 vCPU, 2 GB) Reference / Tuning-only:  76.7% (92/120)  / 80.8% (97/120) within 500 ms
+  * $48/mo (4 vCPU, 8 GB) Reference / Tuning-only:  81.7% (98/120)  / 82.5% (99/120) within 500 ms
+  * $4/mo (1 vCPU, 512 MB) With Argus:              90.8% (109/120) within 500 ms (0 SSH failures)
+- 800 connections + 12 HTTPS workers (120 probes):
+  * $4/mo Reference / Tuning-only:  71.7% (86/120) / 91.7% (110/120) within 500 ms
+  * $18/mo Reference / Tuning-only: 65.0% (78/120) / 70.8% (85/120) within 500 ms
+  * $48/mo Reference / Tuning-only: 76.7% (92/120) / 82.5% (99/120) within 500 ms
+  * $4/mo With Argus:               92.5% (111/120) within 500 ms (flood sockets reduced to 25-28)
+- 800 connections + 32 heavy HTTPS workers (40 probes):
+  * $4/mo Reference / Tuning-only:  25.0% / 50.0% (Reference failed active-load SSH)
+  * $48/mo Reference / Tuning-only: 32.5% / 22.5% (Tuned failed active-load SSH)
+  * $4/mo With Argus:               97.5% (39/40, p50 = 289.6 ms, all SSH checks passed)
+  * $48/mo With Argus:              97.5% (39/40, p50 = 285.9 ms, all SSH checks passed)
+- Sub-threshold high-rate request flood (150 connections below the tested intervention setting + 24 workers, 40 probes):
+  * $4/mo Reference / Tuning-only / With Argus: 40.0% / 55.0% / 50.0% (20/40, 0 interventions)
+  * $48/mo Tuning-only / With Argus:            57.5% (23/40) / 37.5% (15/40, 0 interventions)
+  * Boundary finding: High-rate HTTP request floods operating below the tested connection setting require Layer-7 request rate limiting (such as NGINX limit_req) and upstream CDN/WAF controls.
+
+3. MONOTONIC INTERVENTION TIMINGS (10 INDEPENDENT REPETITIONS, CLOCK_MONOTONIC)
+Internal checkpoints are reported as Checkpoint A and Checkpoint B (mapping retained privately):
+- Trigger -> Checkpoint A (t1 -> t2, 10/10 observed):          min 8.19 ms | median 136.08 ms | mean 130.32 ms | max 193.13 ms
+- Trigger -> Checkpoint B (t1 -> t3, 10/10 observed):          min 37.13 ms | median 164.89 ms | mean 162.61 ms | max 256.58 ms
+- Trigger -> Connection release (t1 -> t4, 10/10 observed):    min 63.27 ms | median 193.61 ms | mean 203.25 ms | max 312.64 ms
+- Trigger -> First packet block (t1 -> t5, 9/10; Rep 02 null): min 161.49 ms | median 191.48 ms | mean 231.24 ms | max 353.02 ms
+- Trigger -> Release & block complete (9/10; Rep 02 null):     min 161.49 ms | median 194.54 ms | mean 236.43 ms | max 353.02 ms
+
+4. SHARED-IP BEHAVIOR, TRAFFIC CHECKS, ROLLBACK & COLD REBOOT
+- Shared-IP scenarios: 0 incorrect interventions at 50, 120, and 175 concurrent connections without exemption (100% HTTP 200), and 0 interventions at 260 connections with a trusted-source exemption. In an intentional 240-connection shared-IP breach test without exemption, web access from that shared IP was temporarily blocked (including legitimate users behind it), another visitor IP received 5/5 HTTP 200 responses, inbound SSH on ports 22 and 2222 succeeded, and HTTPS recovered 9.02 s after socket closure.
+- Traffic-handling, recovery & reboot: All 13 deterministic traffic-handling checks passed (including allowed visitor traffic, blocked web traffic, preserved inbound SSH, and rejection of source-port spoofing; outbound connections initiated to a blocked peer can remain unavailable during the block). Recovery after forced process termination, automatic expiry, scoped rollback preserving all unrelated routes/rules, and cold-reboot external SSH verification all passed.
